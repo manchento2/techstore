@@ -9,7 +9,7 @@
 
 // ── 1. CONFIGURACIÓN Y CONSTANTES ──
 const CART_STORAGE_KEY = 'techstore_cart_v1';
-const WHATSAPP_PHONE   = '5491123456789'; // Número para pedidos (formato internacional sin +)
+const WHATSAPP_PHONE   = '5492664657929'; // Número de WhatsApp para pedidos (2664657929)
 
 // Catálogo de Productos Tecnológicos Premium
 const PRODUCTS = [
