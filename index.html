@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechStore – Tu tienda online de tecnología premium, gadgets de última generación, smartphones, laptops y audio de alta fidelidad." />
+  <meta name="theme-color" content="#0a0f1d" />
+  <title>TechStore – La Mejor Tecnología a tu Alcance</title>
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Estilos del Catálogo -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       1. HEADER / NAVEGACIÓN
+  ════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container header__container">
+      
+      <!-- Logo -->
+      <a href="#" class="header__logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <span class="logo-text">Tech<span class="logo-accent">Store</span></span>
+      </a>
+
+      <!-- Buscador en tiempo real -->
+      <div class="header__search">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input 
+          type="search" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Buscar laptops, audio, smartphones…" 
+          autocomplete="off"
+        />
+        <button type="button" class="search-clear" id="search-clear" style="display:none;" aria-label="Limpiar búsqueda">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Acciones de cabecera -->
+      <div class="header__actions">
+        <!-- Enlaces rápidos desktop -->
+        <nav class="header__nav">
+          <a href="#catalogo" class="nav-link">Catálogo</a>
+          <a href="#beneficios" class="nav-link">Beneficios</a>
+          <a href="#faq" class="nav-link">Preguntas</a>
+        </nav>
+
+        <!-- Botón de Carrito -->
+        <button class="cart-btn" id="cart-toggle-btn" aria-label="Ver carrito de compras">
+          <div class="cart-btn__icon-wrap">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </div>
+          <span class="cart-btn__text">Carrito</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════
+       2. HERO SECTION / BANNER PRINCIPAL
+  ════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+
+    <div class="container hero__container">
+      <div class="hero__content">
+        <span class="hero__tag">
+          <i class="fa-solid fa-bolt"></i> Nueva Colección 2026
+        </span>
+        <h1 class="hero__title">
+          La mejor <span class="gradient-text">tecnología</span> a tu alcance
+        </h1>
+        <p class="hero__subtitle">
+          Descubrí gadgets de vanguardia, laptops de alto rendimiento, smartphones flagship y audio premium con garantía oficial y entrega rápida.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#catalogo" class="btn btn--primary">
+            <i class="fa-solid fa-bag-shopping"></i> Explorar Catálogo
+          </a>
+          <a href="#beneficios" class="btn btn--secondary">
+            <i class="fa-solid fa-shield-check"></i> Garantía y Envíos
+          </a>
+        </div>
+
+        <!-- Micro-beneficios -->
+        <div class="hero__stats">
+          <div class="stat-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <strong>Envíos Gratis</strong>
+              <span>En compras superiores a $150</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+              <strong>12 Meses Garantía</strong>
+              <span>Equipos 100% originales</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-credit-card"></i>
+            <div>
+              <strong>Cuotas sin interés</strong>
+              <span>Con tarjetas seleccionadas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen / Tarjeta flotante visual en Hero -->
+      <div class="hero__visual">
+        <div class="hero__card-glass">
+          <div class="hero__badge-pulse">
+            <span class="pulse-dot"></span> Producto Destacado
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=700&q=80" 
+            alt="MacBook Pro M3 Max" 
+            class="hero__product-img"
+          />
+          <div class="hero__card-details">
+            <div>
+              <span class="hero__card-cat">Laptops Flagship</span>
+              <h3 class="hero__card-title">MacBook Pro M3 14"</h3>
+            </div>
+            <div class="hero__card-price">
+              <span class="price-val">$1,799.00</span>
+              <button class="btn btn--sm btn--primary" onclick="window.addToCartDirect(1)">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       3. FILTROS Y BÚSQUEDA
+  ════════════════════════════════════════ -->
+  <section class="catalog-section" id="catalogo">
+    <div class="container">
+
+      <div class="catalog-header">
+        <div class="catalog-header__text">
+          <h2 class="section-title">Catálogo de <span class="gradient-text">Productos</span></h2>
+          <p class="section-subtitle">Seleccioná una categoría o buscá tu próximo dispositivo favorito</p>
+        </div>
+
+        <div class="catalog-stats">
+          <span id="catalog-count">Mostrando 8 productos</span>
+        </div>
+      </div>
+
+      <!-- Barra de filtros por categorías -->
+      <div class="category-filters" id="category-filters" role="group" aria-label="Filtro de categorías">
+        <button class="cat-pill active" data-category="Todos">
+          <i class="fa-solid fa-border-all"></i> Todos
+        </button>
+        <button class="cat-pill" data-category="Laptops">
+          <i class="fa-solid fa-laptop"></i> Laptops
+        </button>
+        <button class="cat-pill" data-category="Smartphones">
+          <i class="fa-solid fa-mobile-screen"></i> Smartphones
+        </button>
+        <button class="cat-pill" data-category="Audio">
+          <i class="fa-solid fa-headphones"></i> Audio
+        </button>
+        <button class="cat-pill" data-category="Accesorios">
+          <i class="fa-solid fa-keyboard"></i> Accesorios
+        </button>
+      </div>
+
+      <!-- ════════════════════════════════════════
+           4. GRID DE PRODUCTOS
+      ════════════════════════════════════════ -->
+      <div class="products-grid" id="products-grid">
+        <!-- JavaScript renderizará los productos aquí -->
+      </div>
+
+      <!-- Estado vacío cuando no hay resultados de búsqueda -->
+      <div class="empty-results" id="empty-results" style="display:none;">
+        <div class="empty-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <h3>No encontramos coincidencias</h3>
+        <p>No se encontraron productos con el término "<span id="empty-term"></span>".</p>
+        <button class="btn btn--secondary" id="btn-reset-filters">
+          <i class="fa-solid fa-rotate-left"></i> Restablecer filtros
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       BENEFICIOS / POR QUÉ ELEGIR TECHSTORE
+  ════════════════════════════════════════ -->
+  <section class="benefits-section" id="beneficios">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">¿Por qué comprar en <span class="gradient-text">TechStore</span>?</h2>
+        <p class="section-subtitle">Garantizamos una experiencia de compra transparente, rápida y segura.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 class="benefit-title">Envíos Rápidos y Seguros</h3>
+          <p class="benefit-desc">Despachamos en 24 horas hábiles a todo el país con número de seguimiento en tiempo real.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="benefit-title">Garantía Oficial</h3>
+          <p class="benefit-desc">Todos nuestros equipos son 100% originales con garantía directa de fábrica por 12 meses.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h3 class="benefit-title">Atención Personalizada</h3>
+          <p class="benefit-desc">Chatea directamente con nuestros asesores técnicos para despejar dudas antes y después de comprar.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+          </div>
+          <h3 class="benefit-title">Devolución sin Complicaciones</h3>
+          <p class="benefit-desc">Si no estás satisfecho con tu compra, dispones de 10 días para realizar el cambio o devolución.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       5. CARRITO DE COMPRAS DESPLEGABLE (DRAWER)
+  ════════════════════════════════════════ -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito de compras" role="dialog" aria-modal="true">
+    
+    <!-- Header del Carrito -->
+    <div class="cart-drawer__header">
+      <div class="cart-drawer__title">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h2>Tu Carrito</h2>
+        <span class="cart-drawer__count" id="cart-drawer-count">0 items</span>
+      </div>
+      <button class="cart-drawer__close" id="cart-close-btn" aria-label="Cerrar carrito">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Lista de productos en el Carrito -->
+    <div class="cart-drawer__body" id="cart-items-container">
+      <!-- Los productos se inyectan dinámicamente con app.js -->
+    </div>
+
+    <!-- Footer del Carrito (Subtotal, Total, WhatsApp) -->
+    <div class="cart-drawer__footer" id="cart-footer">
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Envío</span>
+          <span class="free-shipping" id="cart-shipping">¡Gratis!</span>
+        </div>
+        <div class="summary-row summary-row--total">
+          <span>Total</span>
+          <span class="total-price" id="cart-total">$0.00</span>
+        </div>
+      </div>
+
+      <!-- Botón WhatsApp -->
+      <a href="#" class="btn btn--whatsapp" id="btn-checkout-whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Finalizar Compra por WhatsApp</span>
+      </a>
+
+      <!-- Botón vaciar carrito -->
+      <button type="button" class="btn-clear-cart" id="btn-clear-cart">
+        <i class="fa-regular fa-trash-can"></i> Vaciar Carrito
+      </button>
+
+      <p class="cart-note">
+        <i class="fa-solid fa-lock"></i> Compra segura y protegida. Se coordinará el pago y envío directamente por WhatsApp.
+      </p>
+    </div>
+
+  </aside>
+
+  <!-- ════════════════════════════════════════
+       MODAL DE VISTA RÁPIDA (QUICK VIEW)
+  ════════════════════════════════════════ -->
+  <div class="quick-modal-backdrop" id="quick-modal-backdrop" aria-hidden="true">
+    <div class="quick-modal" id="quick-modal">
+      <button class="quick-modal__close" id="quick-modal-close" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="quick-modal__content" id="quick-modal-body">
+        <!-- Renderizado dinámico -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       NOTIFICACIONES FLOTANTES (TOASTS)
+  ════════════════════════════════════════ -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- ════════════════════════════════════════
+       7. FOOTER COMPLETO
+  ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__container">
+      
+      <div class="footer__col footer__col--brand">
+        <a href="#" class="header__logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <span class="logo-text">Tech<span class="logo-accent">Store</span></span>
+        </a>
+        <p class="footer__desc">
+          Especialistas en tecnología de última generación. Distribuidores oficiales de las mejores marcas globales con atención personalizada.
+        </p>
+        <div class="footer__socials">
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-link" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Categorías</h4>
+        <ul class="footer__links">
+          <li><a href="#catalogo" onclick="window.filterFromFooter('Laptops')">Laptops & MacBooks</a></li>
+          <li><a href="#catalogo" onclick="window.filterFromFooter('Smartphones')">Smartphones Flagship</a></li>
+          <li><a href="#catalogo" onclick="window.filterFromFooter('Audio')">Auriculares & Audio Hi-Fi</a></li>
+          <li><a href="#catalogo" onclick="window.filterFromFooter('Accesorios')">Periféricos & Accesorios</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Atención al Cliente</h4>
+        <ul class="footer__links">
+          <li><a href="#beneficios">Garantía Oficial</a></li>
+          <li><a href="#beneficios">Políticas de Envío</a></li>
+          <li><a href="#beneficios">Términos y Condiciones</a></li>
+          <li><a href="https://wa.me/5491100000000?text=Hola%20TechStore%2C%20tengo%20una%20consulta" target="_blank" rel="noopener">Contacto Directo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Métodos de Pago</h4>
+        <p class="footer__text">Aceptamos todos los medios de pago con protección al comprador:</p>
+        <div class="payment-methods">
+          <span class="payment-badge" title="Visa"><i class="fa-brands fa-cc-visa"></i> Visa</span>
+          <span class="payment-badge" title="Mastercard"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
+          <span class="payment-badge" title="Mercado Pago"><i class="fa-solid fa-wallet"></i> MercadoPago</span>
+          <span class="payment-badge" title="Transferencia"><i class="fa-solid fa-building-columns"></i> Transferencia</span>
+          <span class="payment-badge" title="Cripto"><i class="fa-brands fa-bitcoin"></i> Cripto</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-container">
+        <p>&copy; 2026 <strong>TechStore</strong>. Todos los derechos reservados. Desarrollado con HTML5, CSS3 y JavaScript.</p>
+        <p class="footer__credit">Diseñado para proyectos e-commerce y portfolios profesionales.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script interactivo -->
+  <script src="js/app.js"></script>
+</body>
+</html>
